@@ -3,15 +3,15 @@ include('functions.php');
 
 // 入力チェック
 if (
-    !isset($_POST['task']) || $_POST['task']=='' ||
-    !isset($_POST['deadline']) || $_POST['deadline']==''
+    !isset($_POST['name']) || $_POST['name']=='' ||
+    !isset($_POST['price']) || $_POST['price']==''
 ) {
     exit('ParamError');
 }
 
 //POSTデータ取得
-$task = $_POST['task'];
-$deadline = $_POST['deadline'];
+$name = $_POST['name'];
+$price = $_POST['price'];
 $comment = $_POST['comment'];
 
 // Fileアップロードチェック
@@ -48,14 +48,14 @@ $pdo = db_conn();
 
 // データ登録SQL作成
 // imageカラムとバインド変数を追加
-$sql ='INSERT INTO php02_table(id, task, deadline, comment, image, indate)
-VALUES(NULL, :a1, :a2, :a3, :image, sysdate())';
-
+$sql ='INSERT INTO menu(id, image, name, price, comment)
+VALUES(NULL, :image, :a1, :a2, :a3)';
+var_dump($spl);
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':a1', $task, PDO::PARAM_STR);
-$stmt->bindValue(':a2', $deadline, PDO::PARAM_STR);
-$stmt->bindValue(':a3', $comment, PDO::PARAM_STR);
 $stmt->bindValue(':image', $file_name, PDO::PARAM_STR);
+$stmt->bindValue(':a1', $name, PDO::PARAM_STR);
+$stmt->bindValue(':a2', $price, PDO::PARAM_STR);
+$stmt->bindValue(':a3', $comment, PDO::PARAM_STR);
 // :imageを$file_nameで追加！
 $status = $stmt->execute();
 

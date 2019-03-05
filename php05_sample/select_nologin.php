@@ -1,31 +1,36 @@
 <?php
+// セッションのスタート
+session_start();
+
+//0.外部ファイル読み込み
 include('functions.php');
 
-//DB接続
+// ログイン状態のチェック
+// chk_ssid();
+
+$menu = menu();
+
+//1.  DB接続します
 $pdo = db_conn();
 
-//データ表示SQL作成
-$sql = 'SELECT * FROM menu ORDER BY id DESC';
+//２．データ登録SQL作成
+$sql = 'SELECT * FROM menu';
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 
-//データ表示
+//３．データ表示
+$view='';
 if ($status==false) {
     errorMsg($stmt);
 } else {
-    $view='';
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $view .= '<li class="list-group-item">';
-        // imgタグで出力しよう！
-        $view .= '<img src="'.$result['image'].'" alt="" height="50px">';    
-        $view .= '<p>'.$result['name'].'</p>';
-        $view .= '<p>'.$result['price'].'</p>';
-        $view .= '<p>'.$result['comment'].'</p>';
-        $view .= '<div><a href="detail.php?id='.$result[id].'" class="badge badge-primary">Edit</a>';
-        $view .= '<a href="delete.php?id='.$result[id].'" class="badge badge-danger">Delete</a></div>';
+        $view .= '<p>'.$result['deadline'].'-'.$result['task'].'</p>';
+        $view .= '<a href="detail_nologin.php?id='.$result[id].'" class="badge badge-primary">detail</a>';
         $view .= '</li>';
     }
 }
+
 ?>
 
 
@@ -36,9 +41,8 @@ if ($status==false) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>メニューリスト</title>
+    <title>todoリスト表示</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
     <style>
         div {
             padding: 10px;
@@ -48,28 +52,24 @@ if ($status==false) {
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">メニューリスト</a>
+            <a class="navbar-brand" href="#">todo一覧</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">メニュー登録</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="select.php">メニュー一覧</a>
-                    </li>
+                    <?=$menu?>
                 </ul>
             </div>
         </nav>
     </header>
-<div class="list_group_box"></div>
+
     <div>
-        <ul class="list_group">
-            <?=$view?>
+        <ul class="list-group">
+             <?=$view?> 
         </ul>
     </div>
 

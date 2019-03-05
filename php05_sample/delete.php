@@ -7,7 +7,7 @@ include('functions.php');
 $pdo = db_conn();
 
 //3．データ登録SQL作成
-$sql = 'DELETE FROM php02_table WHERE id=:id';
+$sql = 'DELETE FROM menu WHERE id=:id';
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();

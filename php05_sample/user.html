@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css"> -->
+</head>
+<div class="swiper-container">
+    <!-- メイン表示部分 -->
+    <!-- <div class="swiper-wrapper">
+        <img src="../php05_sample/img/about_04.jpg" alt=" " class="swiper-slide">
+        <img src="../php05_sample/img/about_03.jpg" alt=" " class="swiper-slide">
+        <img src="../php05_sample/img/about_02.jpg" alt=" " class="swiper-slide">
+        <img src="../php05_sample/img/about_01.jpg" alt=" " class="swiper-slide">
+    </div> -->
+
+    <!-- course -->
+
+
+    <!-- PIZA_item -->
+    <div class="PIZA_item_box">
+
+        <div class="PIZA_item">
+            <img src="../php05_sample/img/news_img.jpg">
+            <p class="day">2018/11/24</p>
+            <p>チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が天神でオープンしました！</p>
+        </div>
+        <div class="PIZA_item">
+            <img src="../php05_sample/img/news_img.jpg">
+            <p class="day">2018/11/24</p>
+            <p>チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が天神でオープンしました！</p>
+        </div>
+        <div class="PIZA_item">
+            <img src="../php05_sample/img/news_img.jpg">
+            <p class="day">2018/11/24</p>
+            <p>チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が天神でオープンしました！</p>
+        </div>
+
+    </div>
+
+
+    <!-- footer -->
+    <div class="footer">
+        <p>copyrights 2016-2018 Cheeese Academy Fukuoka All RIghts Reserved.</p>
+    </div>
+
+
+    <!-- javascript -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            effect: 'fade',
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: false,
+                reverseDirection: false
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            }
+        });
+    </script>
+    </body>
+
+
+</html>

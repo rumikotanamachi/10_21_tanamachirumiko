@@ -1,0 +1,16 @@
+
+.element.style {
+    width: 50px;
+}
+
+
+.swiper-wrapper img{
+    margin: 10px;
+}
+
+.PIZA_item_box{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
