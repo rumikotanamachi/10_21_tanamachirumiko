@@ -65,7 +65,7 @@ if ($status==false) {
         </nav>
     </header>
 
-    <form method="post" action="update.php">
+    <form method="post" action="update.php" enctype="multipart/form-data"> 
         <div class="form-group">
         <img src="<?= $rs['image'] ?>" height="100px;">
         <input type="file" class="form-control-file" id="upfile" name="upfile" accept="image/*" capture="camera">

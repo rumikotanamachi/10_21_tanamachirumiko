@@ -21,8 +21,6 @@ if ($status==false) {
         $view .= '<p>'.$result['name'].'</p>';
         $view .= '<p>'.$result['price'].'</p>';
         $view .= '<p>'.$result['comment'].'</p>';
-        $view .= '<div><a href="detail.php?id='.$result[id].'" class="badge badge-primary">Edit</a>';
-        $view .= '<a href="delete.php?id='.$result[id].'" class="badge badge-danger">Delete</a></div>';
         $view .= '</li>';
     }
 }
@@ -54,24 +52,15 @@ if ($status==false) {
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">メニュー登録</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="select.php">メニュー一覧</a>
-                    </li>
-                </ul>
-            </div>
         </nav>
     </header>
+
+    
 <div class="list_group_box"></div>
-    <div>
-        <ul class="list_group">
-            <?=$view?>
-        </ul>
-    </div>
+<div class="d-flex">
+
+        <?=$view?>
+</div>
 
 </body>
 

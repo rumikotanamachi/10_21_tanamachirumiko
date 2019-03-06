@@ -38,7 +38,7 @@ if ($status==false) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>メニューリスト</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./style.css">
     <style>
         div {
             padding: 10px;
@@ -66,12 +66,28 @@ if ($status==false) {
             </div>
         </nav>
     </header>
+
+
 <div class="list_group_box"></div>
-    <div>
-        <ul class="list_group">
-            <?=$view?>
-        </ul>
-    </div>
+<div class="d-flex">
+
+        <?=$view?>
+</div>
+<div class="section">
+   <div class="menu">
+      <h2>メニュー</h2>
+      <ul>
+         <li><a href="#" class="current">HOME</a></li>
+         <li><a href="#">最新情報</a></li>
+         <li><a href="#">事業内容</a></li>
+         <li><a href="#">会社概要</a></li>
+         <li><a href="#">採用情報</a></li>
+         <li><a href="#">お問い合わせ</a></li>
+      </ul>
+   </div><!-- menu end -->
+</div><!-- section end -->
+
+
 
 </body>
 

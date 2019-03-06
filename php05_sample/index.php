@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登録画面</title>
+    <link rel="stylesheet" href="./style.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
         div{
@@ -32,7 +34,7 @@
                         <a class="nav-link" href="select.php">メニュー編集</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.html">[一般]メニュー画面</a>
+                        <a class="nav-link" href="user_select.php">[一般]メニュー画面</a>
                     </li>
                 </ul>
             </div>
@@ -40,6 +42,8 @@
     </header>
 
     <!-- 必要な属性を追加 -->
+    <!-- ファイルアップロードをする場合input要素は<input type="file" />を使う -->
+    <!-- その親のform要素には以下のようにenctype="multipart/form-data"と書く必要があります。 -->
         <form method="post" action="insert_file.php" enctype="multipart/form-data"> 
         <div class="form-group">
         <input type="file" class="form-control-file" id="upfile" name="upfile" accept="image/*" capture="camera">
