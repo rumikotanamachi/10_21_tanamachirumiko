@@ -26,6 +26,7 @@ if ($status==false) {
         $view .= '</li>';
     }
 }
+
 ?>
 
 
@@ -36,9 +37,8 @@ if ($status==false) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>メニューリスト</title>
+    <title>フードリスト</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
     <style>
         div {
             padding: 10px;
@@ -50,17 +50,23 @@ if ($status==false) {
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">メニューリスト</a>
+            <a class="navbar-brand" href="#">フードリスト</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="select.php">フード編集</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="drink_select.php">ドリンク編集</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">メニュー登録</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="select.php">メニュー一覧</a>
+                        <a class="nav-link" href="drink_index.php">ドリンク登録</a>
                     </li>
                 </ul>
             </div>
@@ -68,27 +74,18 @@ if ($status==false) {
     </header>
 
 
-<div class="list_group_box"></div>
-<div class="d-flex">
+<!-- <div class="list_group_box"></div>
+<div class="d-flex"> -->
 
+<!-- </div> -->
+<div class="d-flax  align-items-center justify-content-center" >
+<div class="card" style="width: 18rem;">
+
+<!-- <div class="d-flex justify-content-center"> -->
         <?=$view?>
 </div>
-<div class="section">
-   <div class="menu">
-      <h2>メニュー</h2>
-      <ul>
-         <li><a href="#" class="current">HOME</a></li>
-         <li><a href="#">最新情報</a></li>
-         <li><a href="#">事業内容</a></li>
-         <li><a href="#">会社概要</a></li>
-         <li><a href="#">採用情報</a></li>
-         <li><a href="#">お問い合わせ</a></li>
-      </ul>
-   </div><!-- menu end -->
-</div><!-- section end -->
-
-
-
+  <!-- </div> -->
+</div>
 </body>
 
 </html>

@@ -21,7 +21,7 @@
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">フード登録</a>
+            <a class="navbar-brand" href="#">ドリンク登録</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,7 +50,7 @@
     <!-- 必要な属性を追加 -->
     <!-- ファイルアップロードをする場合input要素は<input type="file" />を使う -->
     <!-- その親のform要素には以下のようにenctype="multipart/form-data"と書く必要があります。 -->
-        <form method="post" action="insert_file.php" enctype="multipart/form-data"> 
+        <form method="post" action="drink_insert_file.php" enctype="multipart/form-data"> 
         <div class="form-group">
         <input type="file" class="form-control-file" id="upfile" name="upfile" accept="image/*" capture="camera">
         <label for="upfile"></label>

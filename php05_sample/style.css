@@ -1,3 +1,32 @@
-.list-group-item{
-    color: red;
+/* .col-4{
+    margin-right: auto;
+    padding: 24px;
+    padding-top: 18px;
 }
+.list_group_content{
+    margin-left: auto;
+    padding: 24px;
+    padding-top: 18px;
+}
+
+.list_group_food{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}*/
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: blue;
+}
+
+ .list_group_food{
+    list-style: none;
+
+
+ }
+ .list_group_drink{
+    list-style: none;
+ }
